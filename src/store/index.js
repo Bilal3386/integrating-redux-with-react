@@ -9,6 +9,13 @@ const counterReducer = (state = { counter: 0 }, action) => {
     return { counter: state.counter - 2 };
   }
 
+  if (action.type === "IncrementBy5") {
+    return { counter: state.counter + 5 };
+  }
+
+  if (action.type === "DecrementBy5") {
+    return { counter: state.counter - 5 };
+  }
   return state;
 };
 const store = createStore(counterReducer);
